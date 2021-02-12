@@ -39,25 +39,26 @@ export default class Bubblesort extends Component {
 
   bubbleSortStrap() {
     let count = this.state.count
-    let results = bubblePlay();
+    let results = bubblePlay(this.state.data);
 
     this.setState({
       data: results.array,
       count: count + 1,
       currentIndex: results.currentIndex,
-      currentValue: results.currentValue
+      currentValue: results.currentValue,
+      nextValue: results.nextValue
     })
 
-    // if (!results.isSorted) {
-    //   setTimeout(this.bubbleSortStrap, this.state.speed)
-    // } else {
-    //   this.setState({
-    //     data: results.array,
-    //     count: count,
-    //     currentIndex: results.currentIndex,
-    //     currentValue: results.currentValue
-    //   })
-    // };
+    if (!results.isSorted) {
+      setTimeout(this.bubbleSortStrap, this.state.speed)
+    } else {
+      this.setState({
+        data: results.array,
+        count: count,
+        currentIndex: results.currentIndex,
+        currentValue: results.currentValue
+      })
+    };
   };
 
 
@@ -93,8 +94,8 @@ export default class Bubblesort extends Component {
   }
 
   handlePlay() {
-    // startBubbleSort(this.state.data)
-    this.bubbleSortStrap(this.state.data)
+    startBubbleSort(this.state.data)
+    this.bubbleSortStrap()
     this.state.isPlaying = true
 
   };

@@ -1,20 +1,20 @@
 
 
 let i, j;
-// export let array = []; // init array to be accessed in component
+export let array = []; // init array to be accessed in component
 
-// export function startBubbleSort(inputArray) {
+export function startBubbleSort(inputArray) {
 
-//     array.splice(0, array.length)
-//     //init the var and array
-//     for(let i = 0; i < inputArray.length; i++) {
-//         array.push(inputArray[i])
-//     }
+    array.splice(0, array.length)
+    //init the var and array
+    for(let i = 0; i < inputArray.length; i++) {
+        array.push(inputArray[i])
+    }
 
-//     i = array.length - 1
-//     j = 0
+    i = array.length - 1
+    j = 0
 
-// }
+}
 
 export function bubblePlay(array){
     console.log("I am array", array)
@@ -49,7 +49,8 @@ export function bubblePlay(array){
             array: array,
             isSorted: false,
             currentIndex: j,
-            currentValue: array[j]
+            currentValue: array[j],
+            nextValue: j + 1
         };
  }
 
